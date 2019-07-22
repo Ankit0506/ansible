@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  tasks: 
+    - name: 'Bash Version'
+      shell: bash --version
+      register: out
+    - debug: msg={{ out.stdout }}
+
+    - name: Append data in file
+      lineinfile:
+         path: /Users/ankitrai/Desktop/Ankit/ansible/file.txt
+         create: yes
+         line: "{{ out.stdout }}"
+         
+         

@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks: 
+    - name: Create a file
+      file: path=/Users/ankitrai/Desktop/Ankit/ansible/filename.txt state=touch

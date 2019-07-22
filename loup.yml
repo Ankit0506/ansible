@@ -1,0 +1,7 @@
+
+- name: Add line in file
+  lineinfile: dest=/Desktop/Ankit/ansible/file.txt line={{ items }} state=present
+  with_items:
+    - Line 1
+    - Line 2
+    - Line 3

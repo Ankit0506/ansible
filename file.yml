@@ -1,0 +1,18 @@
+---
+ - name: Change file ownership
+   file: 
+     path: /Users/ankitrai/Downloads/test.yml
+     owner: ankitrai
+     group: ankitrai
+     mode: '0644'
+
+ - name: Create insecure file
+   file: 
+     path: /Users/ankitrai
+     owner: ankitrai
+     group: ankitrai
+     mode: '1777'
+
+...
+
+

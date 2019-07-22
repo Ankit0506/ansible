@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  remote_user: root
+  
+  tasks: 
+  - name: ensure apache is at latest version
+    yum: name=httpd state=latest
+  - name: write apache config file
+    template:
+      src: /src/httpd.j2
+      dest: /etc/httpd.conf
+
+  tasks: 
+     - name: ensure postgres
+       yum: name=postgresql state=latest
+     - name: ensure postgres is started
+       service: postgressql
+       state: started

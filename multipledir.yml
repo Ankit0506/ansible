@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks: 
+    - name: Create multiple directory
+      file: path={{ item }} state=directory
+      with_items: 
+        - '/Users/ankitrai/Desktop/Ankit/ansible/ank1'
+        - '/Users/ankitrai/Desktop/Ankit/ansible/ank2'
+        - '/Users/ankitrai/Desktop/Ankit/ansible/ank3'
+        - '/Users/ankitrai/Desktop/Ankit/ansible/ank4'
+      register=out
+      debug: msg="{{ out.stdout }}"

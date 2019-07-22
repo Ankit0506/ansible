@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks: 
+    - name: Create directory
+      file: path=/Users/ankitrai/Desktop/Ankit/ansible/directory state=directory mode=775

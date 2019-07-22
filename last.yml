@@ -1,0 +1,10 @@
+---
+ - hosts: localhost
+   connection: local
+   tasks: 
+     - debug: 
+         msg: task1
+     - name: Include tasklist in play if condition is true
+       include: "{{ hostvar }}.yml"
+       static: no
+       when: hostvar is defined
